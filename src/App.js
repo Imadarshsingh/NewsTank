@@ -9,7 +9,7 @@ const App = () => {
   const [category, setcategory] = useState(["technology"]);
   return (
     <Routes>
-      <Route path='/' element={<>
+      <Route path='/NewsTank' element={<>
         <Navbar setcategory={setcategory} />
         <Newscontent category={category} />
         <Footer /></>} />
