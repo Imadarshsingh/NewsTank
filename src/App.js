@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import Navbar from './components/Navbar';
+import Newscontent from './components/Newscontent';
+import { useState } from 'react';
+import Footer from './components/Footer';
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
+const App = () => {
+  const [category, setcategory] = useState(["technology"]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<>
+        <Navbar setcategory={setcategory} />
+        <Newscontent category={category} />
+        <Footer /></>} />
+    </Routes>
   );
 }
-
 export default App;
